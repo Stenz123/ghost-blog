@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://stenz123.github.io/ghost-blog/'
 languageCode = 'de-at'
 title = 'Urban Ghost Hunters'
 theme = 'ghostTheme'
