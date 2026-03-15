@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ absURL `styles/style.css` }}">
+    <title>Urban Ghost Hunters</title>
+</head>
+<body>
+    <div id="entirePage">
+        <div id="document">
+            {{- partial "header.html" . -}}
+            <div id="content">
+                {{- block "main" . }}{{- end }}
+            </div>
+            {{- partial "footer.html" . -}}
+        </div>
+    </div>
+</body>
+</html>
