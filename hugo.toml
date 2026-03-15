@@ -6,3 +6,16 @@ theme = 'ghostTheme'
 [caches]
     [caches.images]
         dir = ':cacheDir/images'
+[markup.goldmark.renderHooks.image]
+enableDefault = true
+
+[markup.goldmark.renderHooks.link]
+enableDefault = true
+
+[module]
+[[module.mounts]]
+source = 'assets'
+target = 'assets'
+[[module.mounts]]
+source = 'static'
+target = 'assets'
