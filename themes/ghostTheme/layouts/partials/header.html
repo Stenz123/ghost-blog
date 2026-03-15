@@ -5,8 +5,8 @@
         <img src="{{ absURL `images/sign.png` }}">
     </div>
     <nav>
-        <a href="/" class="button">Home</a>
-        <a href="/posts" class="button">Posts</a>
-        <a href="/tags" class="button">Tags</a>
+        <a href="{{ .Site.BaseURL }}" class="button">Home</a>
+        <a href="{{ .Site.BaseURL }}/posts" class="button">Posts</a>
+        <a href="{{ .Site.BaseURL }}/tags" class="button">Tags</a>
     </nav>
 </header>
