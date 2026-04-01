@@ -1,0 +1,29 @@
+<article class="card ghost-glow">
+    <div class="card-inner">
+        <div class="card-body">
+            <h2 class="card-title">
+                <a href="{{ .RelPermalink }}">{{ time.Format "02.01 2006" .PublishDate }} {{ .Title }}</a>
+
+            </h2>
+
+            <div class="card-meta">
+                <time datetime="{{ .PublishDate }}">
+                    {{ time.Format "02.01.2006" .PublishDate }}
+                </time>
+            </div>
+
+            <p class="card-summary">
+                {{ .Summary }}
+            </p>
+
+            {{ if .Truncated }}
+                <a href="{{ .RelPermalink }}">mehr lesen...</a>
+            {{ end }}
+        </div>
+
+        {{ with .Params.cardImage }}
+                <img src="{{ . | relURL }}" class="card-image" alt="{{ $.Title }}">
+        {{ else }}
+        {{ end }}
+    </div>
+</article>

@@ -2,9 +2,9 @@
 date = '2026-03-14T18:59:36+01:00'
 draft = false
 title = 'Geister Sichtung'
+tags = ['highlight']
+cardImage = 'images/ghost1.jpg'
 +++
-
-## Die Sichtung
 
 Kurz nach Mitternacht kam es zu dem Ereignis, das diesen Fall besonders macht.
 

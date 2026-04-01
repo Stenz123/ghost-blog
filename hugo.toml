@@ -3,6 +3,8 @@ languageCode = 'de-at'
 title = 'Urban Ghost Hunters'
 theme = 'ghostTheme'
 
+summaryLength = 3
+
 [caches]
     [caches.images]
         dir = ':cacheDir/images'

@@ -1,0 +1,35 @@
+<style>
+    .media-gallery {margin-left: -1%!important; column-count: 4; column-gap: 15px}
+    .media-gallery a {text-align: center; text-decoration: none!important; color: #777; display: inline-block; width: 100%}
+    .media-gallery a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+    .media-gallery a .media {width: 100%; display: block; height: auto;!important;}
+</style>
+
+{{ $dir := string .gallery_dir }}
+{{ $type := .type }}
+<div class="media-gallery">
+    {{ range (readDir (print "/assets" $dir)) }}
+    {{- $media := resources.Get (printf "%s/%s" $dir .Name) -}}
+    {{- $mediaurl := printf "%s/%s" $dir .Name -}}
+    {{- $mediatitle := index (split .Name ".") 0 -}}
+    <a href="{{ $media.Permalink }}" title="{{ $mediatitle }}" class="lightbox-media">
+        {{ with $type }}
+            {{ if (eq . "audio")}}
+                <audio class="media" controls>
+                    <source src="{{ $media.Permalink }}" type="audio/mpeg">
+                </audio>
+            {{ else if (eq . "video")}}
+                <video class="media" controls>
+                    <source src="{{ $media.Permalink }}" type="video/mp4">
+                </video>
+            {{ else }}
+                <img class="media" src="{{ $media.Permalink }}" alt="{{ $mediatitle }}" title="{{ $mediatitle }}">
+            {{ end }}
+        {{ else }}
+            <img class="media" src="{{ $media.Permalink }}" alt="{{ $mediatitle }}" title="{{ $mediatitle }}">
+        {{ end }}
+        <span>{{ $mediatitle }}</span>
+    </a>
+
+    {{ end }}
+</div>

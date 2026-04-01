@@ -1,0 +1,15 @@
+{{ define "main" }}
+<h1 class="main-section-header">{{.Page.Title}}</h1>
+    {{ with .Params.type }}
+        {{ $type := . }}
+        {{ if (eq . "audio")}}
+            {{- partial "gallery.html"  (dict "context" . "gallery_dir" "/audio" "type" $type) -}}
+        {{ else if (eq . "video")}}
+            {{- partial "gallery.html"  (dict "context" . "gallery_dir" "/video" "type" $type) -}}
+        {{ else }}
+            {{- partial "gallery.html"  (dict "context" . "gallery_dir" "/images" "type" $type) -}}
+        {{ end }}
+    {{ else }}
+        {{- partial "gallery.html"  (dict "context" . "gallery_dir" "/images" "type" $type) -}}
+    {{ end }}
+{{ end }}

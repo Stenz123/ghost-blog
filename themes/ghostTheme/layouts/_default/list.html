@@ -1,9 +1,5 @@
 {{ define "main" }}
-<ul>
     {{ range .Pages.ByPublishDate.Reverse }}
-    <li>
-        {{- partial "listItem.html" . -}}
-    </li>
+        {{- partial "card.html" . -}}
     {{ end }}
-</ul>
 {{ end }}

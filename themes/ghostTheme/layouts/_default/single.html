@@ -1,5 +1,3 @@
 {{ define "main" }}
-<h2>{{ .Title }}</h2>
-<p>{{ time.Format "01.02.2006" .PublishDate }}</p>
-<div>{{ .Content }}</div>
+    {{- partial "post.html" . -}}
 {{ end }}
